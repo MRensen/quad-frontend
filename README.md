@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# Trivia applicatie
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welkom bij deze trivia applicatie.  
+Je kunt hier leuke vragen beantwoorden in diverse categorieën
 
-Currently, two official plugins are available:
+## Gebruik
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Wanneer je de applicatie opent, zie je het volgende scherm:
 
-## React Compiler
+![img.png](assets/firstscreen.png)  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Verplaats de slider om te bepalen hoeveel vragen je krijgt.   
+Druk vervolgens op de knop "Load questions".   
+Je krijgt nu het volgende te zien:
 
-## Expanding the ESLint configuration
+![img.png](assets/secondscreen.png)  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Elk "blok" is een vraag en bevat een drop-down menu met de antwoordmogelijkheden.  
+Het is nu de bedoeling dat je voor elke vraag een antwoord kiest.  
+Heb je dat gedaan, klik dan op de knop "Submit" die onderaan de vragenlijst staat.  
+Je antwoorden worden nu gecontrolleerd.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![img.png](assets/thirdscreen.png)  
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Het vragen blok wordt groen als je antwoord goed is en rood als je antwoord fout is.  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Troubleshooting
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Het kan voorkomen dat je vragen blok rood omlijnt wordt.  
+Dit betekend dat er iets mis is gegaan.  
+Het best kun je nu de pagina herladen.

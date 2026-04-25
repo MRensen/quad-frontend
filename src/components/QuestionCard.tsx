@@ -2,14 +2,14 @@ import type {Question} from "../App.tsx";
 import {Field, FieldLabel} from "./ui/field.tsx";
 import {Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue} from "./ui/select.tsx";
 import he from "he"
-import {type Control, Controller, useFormContext} from "react-hook-form";
+import {type Control, Controller} from "react-hook-form";
 
-export function QuestionCard({question, colors, control}:{question:Question, colors?: any , control:Control<any>}) {
+export function QuestionCard({question, colors, control}:{question:Question, colors: Record<string, string> , control:Control<any>}) {
     // ${color=="green" ? "bg-green-300": color == "red"? "bg-red-300": "bg-gray-300"}
     return (
         <div className={`max-w-md 
         mx-auto 
-        ${colors[question.id]}
+        ${colors[question.id] ?? "bg-gray-300 border-red-500 border-1"}
         rounded-sm 
         border-2 
         text-center 
