@@ -27,7 +27,6 @@ function App() {
         const result = await axios.get(BASE_URL+"/questions",{
             params:{"amount":amount}
         })
-        console.log(result)
         setQuestions(result.data)
 
         // prefill de kleuren map met grijs voor elk id
