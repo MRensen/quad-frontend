@@ -18,7 +18,8 @@ export interface Question {
 function App() {
     const [amount, setAmount] = useState<number[]>([10])
     const [questions, setQuestions] = useState<Question[]>([])
-    const BASE_URL = "http://localhost:8080/api"
+    // const BASE_URL = "http://localhost:8080/api"
+    const BASE_URL = "https://trivia-backend-uuzyw.ondigitalocean.app/api"
     const {control, handleSubmit} = useForm()
     const [colors, setColors] = useState<Record<string, string>>({})
 
