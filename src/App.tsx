@@ -1,6 +1,6 @@
 import { useState} from 'react'
 import axios from "axios";
-import {useForm, useFormContext} from "react-hook-form";
+import {useForm} from "react-hook-form";
 import QuestionCard from "./components/QuestionCard.tsx";
 import {Slider} from "./components/ui/slider.tsx";
 import {Button} from "./components/ui/button.tsx";
@@ -38,10 +38,6 @@ function App() {
         })
     }
 
-    function handleNumberChange(event){
-        setAmount(event.target.value)
-    }
-
     async function submitForm(data:[]){
         const postData:Record<string,string>[] = []
 
@@ -59,39 +55,36 @@ function App() {
                 [id]: correctness ? "bg-green-300" : "bg-red-300"
             })))
     }
-    return (
-        <>
-            <header className="items-center mb-3">
-                <h1 className="text-center text-6xl text-fuchsia-500">Trivia App</h1>
-            </header>
+    return <>
+        <header className="items-center mb-3">
+            <h1 className="text-center text-6xl text-fuchsia-500">Trivia App</h1>
+        </header>
 
-            <main className="items-center text-center w-full">
-                <section className="items-center">
-                    <p className="text-center text-yellow-500">
-                        Selecteer hier hoeveel vragen je wil krijgen?
-                    </p>
-                    <Slider
-                        value={amount}
-                        onValueChange={setAmount}
-                        max={30}
-                        step={1}
-                        className="mx-auto w-full max-w-xs my-4"
-                    />
-                    <p>Je krijgt {amount} vragen!</p>
-                </section>
-                <Button onClick={getQuestions}>Load questions</Button>
-                <form onSubmit={handleSubmit(submitForm)}>
-                    { questions && questions.map(question => {return (
-                        <QuestionCard key={question.id} question={question} control={control} colors={colors}/>
-                    )})
-                    }
-                    {questions.length > 0 &&
-                        <Button type="submit">Submit</Button>
-                    }
-                </form>
-            </main>
-    </>
-  )
+        <main className="items-center text-center w-full">
+            <section className="items-center">
+                <p className="text-center text-yellow-500">
+                    Selecteer hier hoeveel vragen je wil krijgen?
+                </p>
+                <Slider
+                    value={amount}
+                    onValueChange={setAmount}
+                    max={30}
+                    step={1}
+                    className="mx-auto w-full max-w-xs my-4"
+                />
+                <p>Je krijgt {amount} vragen!</p>
+            </section>
+            <Button onClick={getQuestions}>Load questions</Button>
+            {/*@ts-ignore*/}
+            <form onSubmit={handleSubmit(submitForm)}>
+                { questions && questions.map(question => {return <QuestionCard key={question.id} question={question} control={control} colors={colors}/>})
+                }
+                {questions.length > 0 &&
+                    <Button type="submit">Submit</Button>
+                }
+            </form>
+        </main>
+</>
 }
 
 export default App

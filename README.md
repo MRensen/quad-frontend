@@ -1,7 +1,11 @@
-# Trivia applicatie
+# Trivia applicatie (frontend)
 
 Welkom bij deze trivia applicatie.  
 Je kunt hier leuke vragen beantwoorden in diverse categorieën
+
+## Links
+- [backend](https://github.com/MRensen/quad-backend)
+- [website]()
 
 ## Gebruik
 
@@ -36,3 +40,7 @@ Het vragen blok wordt groen als je antwoord goed is en rood als je antwoord fout
 Het kan voorkomen dat je vragen blok rood omlijnt wordt.  
 Dit betekend dat er iets mis is gegaan.  
 Het best kun je nu de pagina herladen.
+
+## Doorontwikkelingen
+
+Waar vragen nu nog willekeurig geleverd worden, zal er in een volgende iteratie van deze applicatie de mogelijkheid komen om vragen op basis van categorie te selecteren.
