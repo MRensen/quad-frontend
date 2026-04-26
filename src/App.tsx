@@ -19,12 +19,13 @@ function App() {
     const [amount, setAmount] = useState<number[]>([10])
     const [questions, setQuestions] = useState<Question[]>([])
     // const BASE_URL = "http://localhost:8080/api"
-    const BASE_URL = "https://trivia-backend-uuzyw.ondigitalocean.app/api"
+    // const BASE_URL = "https://trivia-backend-uuzyw.ondigitalocean.app/api"
+    const BASE_URL = import.meta.env.VITE_BASE_URL
     const {control, handleSubmit} = useForm()
     const [colors, setColors] = useState<Record<string, string>>({})
 
     async function getQuestions() {
-        const result = await axios.get(BASE_URL+"/questions",{
+        const result = await axios.get(`${BASE_URL}/questions`,{
             params:{"amount":amount}
         })
         setQuestions(result.data)
@@ -45,7 +46,7 @@ function App() {
         Object.entries(data).forEach(([id, answer]) => postData.push({"id":id, "answer":answer}))
 
         // Haal de data op
-        const result = await axios.post(BASE_URL+"/checkanswers",postData,{})
+        const result = await axios.post(`${BASE_URL}/checkanswers`,postData,{})
 
         // Verander de kleuren in rood(fout) of groen(goed)
         // console.log(result.data)
