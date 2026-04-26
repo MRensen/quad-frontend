@@ -44,3 +44,7 @@ Het best kun je nu de pagina herladen.
 ## Doorontwikkelingen
 
 Waar vragen nu nog willekeurig geleverd worden, zal er in een volgende iteratie van deze applicatie de mogelijkheid komen om vragen op basis van categorie te selecteren.
+
+## Installatie instructies
+
+Voor de installatie instructies, kun je de [backend](https://github.com/MRensen/quad-backend) raadplegen.
